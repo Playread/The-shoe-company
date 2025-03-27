@@ -6,13 +6,12 @@
     <title>Shoe Company Project</title>
     <link href="./output.css" rel="stylesheet" />
     <!-- <script src="index.js" defer></script> -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body class="bg-black text-white">
     <header class="bg-red-black">
-      <nav class="flex items-center justify-between w-[92%] m-auto">
-        <div>
+      <nav class="flex items-center justify-between w-[92%] m-auto"> <div>
           <img class="w-[100px]" src="images/shoe-company-logo 1 (1).png" alt="...">
         </div>
         <div class="nav-links duration-500 md:static absolute bg-black min-h[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 pb-8 md:pb-0">
@@ -36,7 +35,10 @@
         </div>
         <div class="flex items-center gap-6">
           <button class="bg-gray-500 text-white px-5 py-2 rounded-full hover:bg-blue-950">Sign in</button>
-          <ion-icon onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden text-white"></ion-icon>
+          <div class="text-2xl md:hidden">
+            <i onclick="onToggleMenu(this)" class="fa-solid fa-bars"></i>
+          </div>
+          
         </div>
       </nav>
     
@@ -190,7 +192,7 @@
 <script>
   const navLinks = document.querySelector('.nav-links')
    function onToggleMenu(e){
-    e.name = e.name === 'menu-outline' ? 'close-outline' : 'menu-outline'
+    e.className = e.className === "fa-solid fa-bars" ?  "fa-solid fa-xmark" :  "fa-solid fa-bars"
     navLinks.classList.toggle('top-[12%]')
    }
  </script>
